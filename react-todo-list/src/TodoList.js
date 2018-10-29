@@ -28,6 +28,17 @@ class TodoList extends Component {
     });
   }
 
+  clickListItem(index) {
+    //duplicate list data
+    const list = [...this.state.list];
+    //remove onclick item
+    list.splice(index, 1);
+    //update todo list
+    this.setState({
+      list: list
+    });
+  }
+
   render() {
     return (
       <div>
@@ -43,7 +54,11 @@ class TodoList extends Component {
         <div className="list-items">
           <ul>
             {this.state.list.map((item, index) => {
-              return <li key={index}>{item}</li>;
+              return (
+                <li key={index} onClick={this.clickListItem.bind(this, index)}>
+                  {item}
+                </li>
+              );
             })}
           </ul>
         </div>
