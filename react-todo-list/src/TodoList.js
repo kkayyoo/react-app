@@ -4,6 +4,9 @@ import "./Theme.css";
 class TodoList extends Component {
   constructor(props) {
     super(props);
+    this.clickTodoBtn = this.clickTodoBtn.bind(this);
+    this.changeInputValue = this.changeInputValue.bind(this);
+    //this.clickListItem = this.clickListItem.bind(this);
     this.state = {
       list: [],
       inputValue: ""
@@ -46,9 +49,9 @@ class TodoList extends Component {
           <input
             type="text"
             value={this.state.inputValue}
-            onChange={this.changeInputValue.bind(this)}
+            onChange={this.changeInputValue}
           />
-          <button onClick={this.clickTodoBtn.bind(this)}>Add Me</button>
+          <button onClick={this.clickTodoBtn}>Add Me</button>
           {/* this is TodoList */}
         </div>
         <div className="list-items">
