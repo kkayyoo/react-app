@@ -43,11 +43,28 @@ class TodoList extends Component {
   //   });
   // }
 
+  // A Function that child Component can pass data to the parent Component
   deleteListItem(index) {
     const list = [...this.state.list];
     list.splice(index, 1);
     this.setState({
       list: list
+    });
+  }
+
+  getTodoListItems() {
+    return this.state.list.map((item, index) => {
+      return (
+        <TodoItem
+          key={index}
+          deleteItems={this.deleteListItem}
+          content={item}
+          index={index}
+        />
+        // <li key={index} onClick={this.clickListItem.bind(this, index)}>
+        //   {item}
+        // </li>
+      );
     });
   }
 
@@ -61,24 +78,10 @@ class TodoList extends Component {
             onChange={this.changeInputValue}
           />
           <button onClick={this.clickTodoBtn}>Add Me</button>
-          {/* this is TodoList */}
+          {/* this is Component */}
         </div>
         <div className="list-items">
-          <ul>
-            {this.state.list.map((item, index) => {
-              return (
-                <TodoItem
-                  key={index}
-                  deleteItems={this.deleteListItem}
-                  content={item}
-                  index={index}
-                />
-                // <li key={index} onClick={this.clickListItem.bind(this, index)}>
-                //   {item}
-                // </li>
-              );
-            })}
-          </ul>
+          <ul>{this.getTodoListItems()}</ul>
         </div>
       </div>
     );
