@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TodoItem from "./TodoItem";
 import "./Theme.css";
 
 class TodoList extends Component {
@@ -6,7 +7,7 @@ class TodoList extends Component {
     super(props);
     this.clickTodoBtn = this.clickTodoBtn.bind(this);
     this.changeInputValue = this.changeInputValue.bind(this);
-    //this.clickListItem = this.clickListItem.bind(this);
+    this.deleteListItem = this.deleteListItem.bind(this);
     this.state = {
       list: [],
       inputValue: ""
@@ -31,12 +32,20 @@ class TodoList extends Component {
     });
   }
 
-  clickListItem(index) {
-    //duplicate list data
+  // clickListItem(index) {
+  //   //duplicate list data
+  //   const list = [...this.state.list];
+  //   //remove onclick item
+  //   list.splice(index, 1);
+  //   //update todo list
+  //   this.setState({
+  //     list: list
+  //   });
+  // }
+
+  deleteListItem(index) {
     const list = [...this.state.list];
-    //remove onclick item
     list.splice(index, 1);
-    //update todo list
     this.setState({
       list: list
     });
@@ -58,9 +67,15 @@ class TodoList extends Component {
           <ul>
             {this.state.list.map((item, index) => {
               return (
-                <li key={index} onClick={this.clickListItem.bind(this, index)}>
-                  {item}
-                </li>
+                <TodoItem
+                  key={index}
+                  deleteItems={this.deleteListItem}
+                  content={item}
+                  index={index}
+                />
+                // <li key={index} onClick={this.clickListItem.bind(this, index)}>
+                //   {item}
+                // </li>
               );
             })}
           </ul>
