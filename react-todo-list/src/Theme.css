@@ -1,0 +1,76 @@
+.app--wrapper {
+  margin: 10vw auto;
+  padding: 3vw;
+  text-align: center;
+  width: 40vmax;
+}
+.app--wrapper h2 {
+  font-size: calc(32px + 1vw);
+  letter-spacing: 1px;
+  margin-bottom: 1.2em;
+  position: relative;
+}
+.app--wrapper h2::after {
+  content: "";
+  background-color: #ffab22;
+  bottom: -20px;
+  height: 5px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.app--wrapper h3 {
+  color: #666666;
+  font-size: calc(22px + 0.5vw);
+  text-align: left;
+  margin-top: 1em;
+}
+
+.input--group {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.input--group input {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  height: 2em;
+  margin-right: 5%;
+  width: 70%;
+}
+
+.input--group input:focus {
+  border-color: #ffab22;
+  outline: none;
+}
+
+.input--group button {
+  background-color: #ef4d00;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 25%;
+}
+
+.input--group button:focus {
+  outline: none;
+}
+
+.list--wrapper {
+  background-color: #eee;
+  list-style: none;
+  margin-top: 30px;
+  padding-left: 0;
+  text-align: left;
+}
+
+.list--item {
+  border-bottom: 1px solid #ffab22;
+  font-size: calc(16px + 0.5vw);
+  padding: 0.5em 1.2em;
+}

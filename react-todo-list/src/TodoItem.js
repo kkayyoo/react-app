@@ -11,7 +11,11 @@ class TodoItem extends Component {
   }
   render() {
     const { content } = this.props;
-    return <li onClick={this.deleteItem}>{content}</li>;
+    return (
+      <li className="list--item" onClick={this.deleteItem}>
+        {content}
+      </li>
+    );
   }
 }
 

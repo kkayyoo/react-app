@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
-import "./Theme.css";
 
 class TodoList extends Component {
   constructor(props) {
@@ -71,7 +70,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <div className="input-group">
+        <div className="input--group">
           <input
             type="text"
             value={this.state.inputValue}
@@ -80,9 +79,8 @@ class TodoList extends Component {
           <button onClick={this.clickTodoBtn}>Add Me</button>
           {/* this is Component */}
         </div>
-        <div className="list-items">
-          <ul>{this.getTodoListItems()}</ul>
-        </div>
+        <h3>Things Need To Do:</h3>
+        <ul className="list--wrapper">{this.getTodoListItems()}</ul>
       </div>
     );
   }
