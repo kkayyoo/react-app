@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import TodoItem from "./TodoItem";
 
 class TodoList extends Component {
@@ -69,7 +69,7 @@ class TodoList extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <div className="input--group">
           <input
             type="text"
@@ -81,7 +81,7 @@ class TodoList extends Component {
         </div>
         <h3>Things Need To Do:</h3>
         <ul className="list--wrapper">{this.getTodoListItems()}</ul>
-      </div>
+      </Fragment>
     );
   }
 }
