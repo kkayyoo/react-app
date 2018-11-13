@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from "react";
 import TodoItem from "./TodoItem";
 
+import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
+import "./Transition.css";
+
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -80,7 +83,15 @@ class TodoList extends Component {
           {/* this is Component */}
         </div>
         <h3>Things Need To Do:</h3>
-        <ul className="list--wrapper">{this.getTodoListItems()}</ul>
+        <ul className="list--wrapper">
+          <CSSTransitionGroup
+            transitionName="fade"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={200}
+          >
+            {this.getTodoListItems()}
+          </CSSTransitionGroup>
+        </ul>
       </Fragment>
     );
   }

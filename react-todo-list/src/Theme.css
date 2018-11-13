@@ -62,7 +62,6 @@
 }
 
 .list--wrapper {
-  background-color: #eee;
   list-style: none;
   margin-top: 30px;
   padding-left: 0;
@@ -70,7 +69,12 @@
 }
 
 .list--item {
-  border-bottom: 1px solid #ffab22;
+  border: 1px solid transparent;
   font-size: calc(16px + 0.5vw);
+  margin-bottom: 5px;
   padding: 0.5em 1.2em;
+}
+
+.list--item:hover {
+  border-color: #ffab22;
 }
