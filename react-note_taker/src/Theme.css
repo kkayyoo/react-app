@@ -1,0 +1,90 @@
+.app--wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.note-listing {
+  width: 30%;
+}
+.edit-panel {
+  width: 70%;
+}
+.edit-panel--content {
+  margin-bottom: 30px;
+}
+.edit-panel--content textarea {
+  height: 60vh;
+  width: 90%;
+}
+
+.app--wrapper h3 {
+  color: #666666;
+  font-size: calc(22px + 0.5vw);
+  text-align: left;
+  margin-top: 1em;
+}
+
+.input--group {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.input--group input {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  height: 2em;
+  margin-right: 5%;
+  width: 70%;
+}
+
+.input--group input:focus {
+  border-color: #ffab22;
+  outline: none;
+}
+
+.input--group button {
+  background-color: #ef4d00;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 25%;
+}
+
+.input--group button:focus {
+  outline: none;
+}
+
+.list--wrapper {
+  list-style: none;
+  margin-top: 30px;
+  padding-left: 0;
+  text-align: left;
+}
+
+.list--item {
+  background-color: #ffe9c6;
+  border: 1px solid transparent;
+  font-size: calc(16px + 0.2vw);
+  margin-bottom: 1em;
+  min-height: 100px;
+  padding: 1em 1.2em;
+  position: relative;
+  width: 75%;
+}
+
+.delete-btn {
+  bottom: 0.5em;
+  position: absolute;
+  right: 1.2em;
+}
+
+.list--item:hover {
+  border-color: #ffab22;
+}
