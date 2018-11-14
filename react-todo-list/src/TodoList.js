@@ -19,12 +19,14 @@ class TodoList extends Component {
   clickTodoBtn() {
     //this.state.list.push("hello world");
     //use setState to update/change state's data
-    this.setState({
-      // this is the btn, but use bind to change this
-      list: [...this.state.list, this.state.inputValue],
-      //clear input value
-      inputValue: ""
-    });
+    if (this.state.inputValue !== "") {
+      this.setState({
+        // this is the btn, but use bind to change this
+        list: [...this.state.list, this.state.inputValue],
+        //clear input value
+        inputValue: ""
+      });
+    }
   }
 
   changeInputValue(e) {
