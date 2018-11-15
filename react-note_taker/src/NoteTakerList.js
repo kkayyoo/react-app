@@ -56,17 +56,6 @@ class NoteTakerList extends Component {
     });
   }
 
-  // updateNewLine() {
-  //   return this.props.inputValue.split("\n").map((item, key) => {
-  //     return (
-  //       <span key={key}>
-  //         {item}
-  //         <br />
-  //       </span>
-  //     );
-  //   });
-  // }
-
   getNoteTakerListItems() {
     return this.state.list.map((item, index) => {
       return (
