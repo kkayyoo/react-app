@@ -79,6 +79,16 @@
   width: 75%;
 }
 
+.list--item.is-open {
+  border: 1px solid #ffe9c6;
+  height: 60vh;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 65vw;
+}
+
 .delete-btn {
   bottom: 0.5em;
   position: absolute;

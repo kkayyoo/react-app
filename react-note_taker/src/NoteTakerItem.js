@@ -10,9 +10,11 @@ class NoteTakerItem extends Component {
     };
   }
   //Pass data to parent Component through a Function/method
-  deleteItem() {
+  deleteItem(e) {
+    e.stopPropagation();
     this.props.deleteItems(this.props.index);
   }
+
   openNoteItem(e) {
     e.preventDefault();
     if (this.state.open === false) {
