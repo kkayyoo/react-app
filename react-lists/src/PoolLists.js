@@ -27,14 +27,28 @@ class PoolLists extends Component {
     };
     this.timer = null;
     this.handleVote = this.handleVote.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   componentDidMount() {
     this.timer = setTimeout(() => {
       this.setState({
         posts: [
-          { id: 1, name: "Jon Snow", image: "/images/jon-snow.jpg", vote: 0 },
-          { id: 2, name: "Night King", image: "", vote: 0 }
+          {
+            id: 1,
+            name: "Jon Snow",
+            image: "/images/jon-snow.jpg",
+            description:
+              "Jon Snow, born Aegon Targaryen, is the son of Lyanna Stark and Rhaegar Targaryen, the late Prince of Dragonstone. From infancy, Jon is presented as the bastard son of Lord Eddard Stark, Lyanna's brother, and raised by Eddard alongside his lawful children at Winterfell but his true parentage is kept secret from everyone, including Jon himself.",
+            vote: 0
+          },
+          {
+            id: 2,
+            name: "Night King",
+            image: "",
+            description: "",
+            vote: 0
+          }
         ]
       });
     }, 1000);
@@ -56,12 +70,27 @@ class PoolLists extends Component {
     });
   }
 
+  handleSave(post) {
+    const posts = this.state.posts.map(item => {
+      const newItem = item.id === post.id ? post : item;
+      return newItem;
+    });
+    this.setState({
+      posts
+    });
+  }
+
   render() {
     return (
       <div>
         <ul className="lists-wrapper">
           {this.state.posts.map(item => (
-            <PoolItem post={item} onVote={this.handleVote} />
+            <PoolItem
+              key={item.id}
+              post={item}
+              onVote={this.handleVote}
+              onSave={this.handleSave}
+            />
           ))}
         </ul>
       </div>
