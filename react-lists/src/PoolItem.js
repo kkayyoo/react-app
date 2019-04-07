@@ -23,8 +23,10 @@ function PoolItem(props) {
   return (
     <li>
       <div>
+        <div className="lists-image">
+          <img src={post.image} alt={post.name} />
+        </div>
         <h4>{post.name}</h4>
-        <img src={post.image} alt={post.name} />
       </div>
       <div>
         <button onClick={handleClick}>Like it</button>

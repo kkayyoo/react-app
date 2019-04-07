@@ -58,8 +58,8 @@ class PoolLists extends Component {
 
   render() {
     return (
-      <div className="lists-wrapper">
-        <ul>
+      <div>
+        <ul className="lists-wrapper">
           {this.state.posts.map(item => (
             <PoolItem post={item} onVote={this.handleVote} />
           ))}
