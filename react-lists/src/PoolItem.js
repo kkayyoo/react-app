@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // class PoolItem extends Component {
 //   render() {
@@ -32,5 +33,15 @@ function PoolItem(props) {
     </li>
   );
 }
+
+PoolItem.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    vote: PropTypes.number
+  }).isRequired,
+  onVote: PropTypes.func.isRequired
+};
 
 export default PoolItem;
