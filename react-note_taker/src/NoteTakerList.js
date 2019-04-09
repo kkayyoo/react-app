@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import NoteTakerItem from "./NoteTakerItem";
+//import NoteTakerModal from "./NoteTakerModal";
 
 import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import "./Transition.css";
@@ -10,6 +11,7 @@ class NoteTakerList extends Component {
     this.clickTodoBtn = this.clickTodoBtn.bind(this);
     this.changeInputValue = this.changeInputValue.bind(this);
     this.deleteListItem = this.deleteListItem.bind(this);
+    this.handleSave = this.handleSave.bind(this);
     this.state = {
       list: [],
       inputValue: ""
@@ -56,12 +58,23 @@ class NoteTakerList extends Component {
     });
   }
 
+  handleSave(list) {
+    const lists = this.state.list.map((item, index) => {
+      const newItem = item.index === list.index ? list : item;
+      return newItem;
+    });
+    this.setState({
+      lists
+    });
+  }
+
   getNoteTakerListItems() {
     return this.state.list.map((item, index) => {
       return (
         <NoteTakerItem
           key={index}
           deleteItems={this.deleteListItem}
+          onSave={this.handleSave}
           content={item}
           index={index}
         />
@@ -101,7 +114,6 @@ class NoteTakerList extends Component {
           <div className="edit-panel--btn">
             <button onClick={this.clickTodoBtn}>Add Me</button>
           </div>
-          {/* this is Component */}
         </div>
       </Fragment>
     );
