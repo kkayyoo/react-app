@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "shop": "abc",
+    "product": "item1",
+    "pic": "",
+    "price": 20,
+    "isReviewed": true
+  },
+  {
+    "id": 2,
+    "shop": "def",
+    "product": "item2",
+    "pic": "",
+    "price": 31,
+    "isReviewed": false
+  },
+  {
+    "id": 3,
+    "shop": "ghi",
+    "product": "item3",
+    "pic": "",
+    "price": 26,
+    "isReviewed": false
+  }
+]
