@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.scss';
 
 class OrderItem extends Component {
   render() {
@@ -9,16 +10,18 @@ class OrderItem extends Component {
           <img src={pic} alt={product} />
         </div>
         <div className="orderItem__content">
-          <h3 className="orderItem__product">{product}</h3>
-          <h5 className="orderItem__shop">{shop}</h5>
-          <div className="orderItem__price">{price}</div>
+          <div className="orderItem__info">
+            <h3 className="orderItem__product">{product}</h3>
+            <h5 className="orderItem__shop">{shop}</h5>
+          </div>
+          <div className="orderItem__price">${price}</div>
         </div>
         <div className="orderItem__action">
           {
             isReviewed ? (
-              <button className="orderItem__review orderItem__revie--red">Reviewed</button>
+              <button className="orderItem__review orderItem__review--red">Reviewed</button>
             ) : (
-              <button className="orderItem__review orderItem__revie--gray">Write Review</button>
+              <button className="orderItem__review orderItem__review--gray">Write Review</button>
             )
           }
         </div>

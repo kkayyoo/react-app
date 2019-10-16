@@ -1,0 +1,9 @@
+@import '../../theme/theme.scss';
+
+.header {
+  background-color: $highlight1;
+  padding: 1em 2em;
+  h1 {
+    color: #fff;
+  }
+}

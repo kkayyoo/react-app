@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+$pumpkin: #FF6A15;
+$carrot: #FFA837;
+$yellow: #FFD769;
+$red: #FF1946;
+$white: #ffffff;
+$dark-gray: #333333;
+$gray: #777777;
+$black: #111111;
+
+$highlight1: $red;
+$highlight2: $pumpkin;
+$highlight3: $carrot;
+$highlight4: $yellow;
+
+
+body {
+  color: $dark-gray;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+h3, h5 {
+  margin-top: 0;;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  color: $highlight2;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+p {
+  color: $dark-gray;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}

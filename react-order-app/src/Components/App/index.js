@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../Header';
 import OrderLists from '../OrderLists';
-import './style.css';
+import './style.scss';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
       <Header />
       <OrderLists />
     </div>
